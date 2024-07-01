@@ -9,16 +9,66 @@
         .main {
             background-color: rgb(149, 235, 149);
             height: 900px;
-            width: 550px;
+            width: 650px;
             margin: 0 auto;
             border-radius: 9px;
         }
-        table{
+
+        table {
             margin: 0 auto;
         }
-        input{
+
+        tr td {
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+
+        .border {
             border: none;
+        }
+
+        input {
+            border: none;
+            border-radius: 4px;
+            height: 20px;
+        }
+
+        .text {
+            margin-left: 70px;
+            width: 250px;
+        }
+
+        textarea {
+            border: none;
+            border-radius: 4px;
+            height: 40px;
+        }
+
+        img {
+            height: 15px;
+            width: 50px;
+            margin: 0 5px;
             border-radius: 5px;
+        }
+
+        button {
+            height: 30px;
+            width: 100px;
+            border-radius: 8px;
+            border: none;
+            margin-left: 150px;
+            background-color: rgb(10, 78, 10);
+            color: white;
+        }
+        button:hover{
+            background: transparent;
+            color: black;
+            transition: .6s;
+            border: 1px solid white;
+            transform: scale(1.1);
+        }
+        #background:hover{
+            background-color: rgb(193, 255, 193);
         }
     </style>
 </head>
@@ -28,100 +78,113 @@
         <form>
             <table cellpadding="10" cellspacing="3">
                 <tr>
-                    <td colspan="2">
+                    <td class="border">
                         <h2>Step 1: Your details</h2>
                     </td>
                 </tr>
-                <tr>
+                <tr id="background">
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                    <td>
                         <label>Name</label>
-                        <input type="text" name="" id="" placeholder="Enter your Name"
-                            style="width: 200px; height: 20px; margin-left: 70px;">
+                        <input type="text" class="text" name="" id="" placeholder="Enter your Name" required>
                     </td>
                 </tr>
-                <tr>
+                <tr id="background">
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                    <td>
                         <label for="">Email</label>
-                        <input type="email" placeholder="Enter your Email"
-                            style="width: 200px; height: 20px; margin-left: 70px;">
-                    </td>
-                </tr>
-                <tr>
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                        <input type="email" class="text" placeholder="Enter your Email" required>
+                    </td>
+                </tr>
+                <tr  id="background">
+
+                    <td>
                         <label for="">Phone</label>
-                        <input type="number" placeholder="+ 4475000000"
-                            style="width: 200px; height: 20px; margin-left: 70px">
+
+                        <input type="number" class="text" placeholder="+ 4475000000" required pattern="{0-9}[10]">
+
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td colspan="2" class="border">
                         <h2>Step 2: Delivery Detalis</h2>
                     </td>
                 </tr>
-                <tr>
+                <tr id="background">
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                    <td>
                         <label>Address</label>
-                        <input type="text" name="" id="" style="width: 200px; height: 50px; margin-left: 60px">
+
+                        <textarea name="" id="" class="text" required></textarea>
                     </td>
                 </tr>
-                <tr>
+                <tr id="background">
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                    <td>
                         <label for="">Post Code </label>
-                        <input type="post Code " style="width: 200px; height: 20px; margin-left: 50px">
+
+                        <input type="number" class="text" style="margin-left: 55px;" required>
                     </td>
                 </tr>
-                <tr>
+                <tr id="background">
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                    <td>
                         <label for="">Country</label>
-                        <input type="Country" style="width: 200px; height: 20px; margin-left: 60px">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <h2>Step 2: Card Detalis</h2>
-                    </td>
-                </tr>
-                <tr>
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                        <input type="text" class="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border">
+                        <h2>Step 3: Card Detalis</h2>
+                    </td>
+                </tr>
+                <tr id="background">
+
+                    <td>
                         <label>Card Type</label>
-                        <input type="radio" name="radio" value="Visa" id="">Visa
-                        <input type="radio" name="radio" value="AmEx" id="">AmEx
-                        <input type="radio" name="radio" value="Mastercard" id="">Mastercard
                     </td>
                 </tr>
-                <tr>
+                <tr id="background">
+                    <td>
+                        <input type="radio" name="radio" value="Visa" id="">
+                        <img src="./visa.jfif" alt="">Visa
+                        <input type="radio" name="radio" value="AmEx" id="">
+                        <img src="./amex.jpg" alt="">AmEx
+                        <input type="radio" name="radio" value="Mastercard" id="">
+                        <img src="./mastercard.jpg" alt="">Mastercard
+                    </td>
+                </tr>
+                <tr id="background">
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                    <td>
                         <label for="">Card Numbar </label>
-                        <input type="Card Number" style="width: 200px; height: 20px; margin-left: 30px">
+
+                        <input type="text" class="text" style="margin-left: 40px;" required>
                     </td>
                 </tr>
-                <tr>
+                <tr id="background">
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                    <td>
                         <label for="">Security Code</label>
-                        <input type="Security Code" style="width: 200px; height: 20px;  margin-left: 30px">
+
+                        <input type="number" class="text" style="margin-left: 35px;" required>
                     </td>
                 </tr>
-                <tr>
+                <tr id="background">
 
-                    <td colspan="2" style="border: 2px solid white; border-radius: 5px; ">
+                    <td>
 
                         <label for="">Name on Card</label>
-                        <input type="Name on Card" style="width: 200px; height: 20px; margin-left: 25px">
+
+                        <input type="text" placeholder="Exact Name As On Card" class="text" style="margin-left: 35px;"
+                            required>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" value="BUY IT!"
-                            style=" width: 120px; height: 30px; border-radius: 5px; border: none;color: white; background-color: rgb(4, 51, 4);">
+                    <td class="border">
+                        <button type="submit">BUY IT</button>
                     </td>
                 </tr>
 
