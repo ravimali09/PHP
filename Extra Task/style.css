@@ -15,7 +15,7 @@
 }
 .menu ul{
     margin-top: 25px;
-    margin-left: 140px;
+    margin-left: 120px;
 }
 .menu li{
     display: inline-block;
@@ -152,4 +152,18 @@
 
 .order-step{
     width: 60%;
-}  
+    display: flex;
+    margin-top: 30px;
+} 
+.order-step .box{
+    height: 200px;
+    width: 180px;
+    margin-left: 10px;
+}
+.order-step  img{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.order-step  h6{
+    margin-left: 10px;
+}
