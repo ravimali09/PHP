@@ -1,178 +1,211 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
-.main{
+
+.main {
     background-color: aqua;
     display: flex;
-     width: 100%;
+    width: 100%;
 }
-.logo img{
+
+.logo img {
     height: 30px;
     margin: 20px 80px;
     background-color: transparent;
 }
-.menu ul{
+
+.menu ul {
     margin-top: 25px;
     margin-left: 100px;
 }
-.menu li{
+
+.menu li {
     display: inline-block;
 }
-.menu a{
+
+.menu a {
     text-decoration: none;
     align-items: center;
-   padding: 10px;
-   font-size: 20px;
-   color: rgb(99, 21, 224);
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(99, 21, 224);
 }
-.menu a:hover{
+
+.menu a:hover {
     color: orange;
     font-size: 25px;
     transition: 0.6s;
 }
-.account{
+
+.account {
     margin-top: 25px;
     margin-left: 150px;
 }
-.account a{
+
+.account a {
     font-size: 20px;
     text-decoration: none;
     color: rgb(99, 21, 224);
 }
-.account a:hover{
+
+.account a:hover {
     font-size: 25px;
     transition: 0.6s;
     color: orange;
 }
-.profile{
+
+.profile {
     margin-top: 25px;
     font-size: 20px;
     color: rgb(99, 21, 224);
     margin-left: 40px;
 }
-.profile i:hover{
+
+.profile i:hover {
     color: orange;
     font-size: 25px;
     transition: 0.6s;
 }
-.booking{
-   background-color: rgb(255, 94, 0);
+
+.booking {
+    background-color: rgb(255, 94, 0);
     height: 320px;
-   
+
 }
-.booking h1{
+
+.booking h1 {
     color: white;
     margin: 0px 80px;
-   
-   
+
+
 }
-.booking .pg1{
+
+.booking .pg1 {
     color: white;
     margin: 30px 80px;
-   
+
 }
-.order{
+
+.order {
     display: flex;
     width: 400px;
     margin-left: 80px;
     height: 50px;
 }
-.pnr{
+
+.pnr {
     width: 45%;
     background-color: white;
-    border-radius: 8px 8px 0  0;
+    border-radius: 8px 8px 0 0;
 
- 
+
 }
-.pnr .pg2{
+
+.pnr .pg2 {
     color: gray;
     font-size: 18px;
     margin-left: 25px;
     margin-top: 15px;
 }
-.trn-no{
+
+.trn-no {
     width: 60%;
 }
-.trn-no .pg3{
+
+.trn-no .pg3 {
     color: white;
     font-size: 18px;
     margin-left: 25px;
     margin-top: 15px;
 }
-.trn-no a{
+
+.trn-no a {
     text-decoration: none;
 
 }
-.trn-no:hover{
+
+.trn-no:hover {
     border: 1px solid white;
-    border-radius: 8px 8px 0  0;
+    border-radius: 8px 8px 0 0;
 
 }
-.book-pnr{
+
+.book-pnr {
     width: 800px;
     background-color: white;
     margin-left: 80px;
     display: flex;
     height: 100px;
 }
-.book-pnr input{
+
+.book-pnr input {
     width: 50%;
     height: 50px;
     margin-top: 20px;
     margin-left: 20px;
 }
-.book-pnr button{
-   height: 50px; 
-   width: 200px;
-   margin-left: 50px;
-   margin-top: 20px;
+
+.book-pnr button {
+    height: 50px;
+    width: 200px;
+    margin-left: 50px;
+    margin-top: 20px;
 }
-.steps{
+
+.steps {
     height: 280px;
     background-color: rgb(248, 243, 243);
     display: flex;
 }
-.disc{
+
+.disc {
     width: 40%;
 }
-.disc h4{
+
+.disc h4 {
     margin-left: 80px;
-   margin-top: 30px;
-   font-size: 25px;
+    margin-top: 30px;
+    font-size: 25px;
 }
-.disc p{
+
+.disc p {
     margin-left: 80px;
-   margin-top: 20px;
-   font-size: 20px;
- color: gray;
+    margin-top: 20px;
+    font-size: 20px;
+    color: gray;
 }
 
 
-.order-step{
+.order-step {
     width: 60%;
     display: flex;
     margin-top: 30px;
-} 
-.order-step .box{
+}
+
+.order-step .box {
     height: 200px;
     width: 180px;
     margin-left: 10px;
 }
-.order-step  img{
+
+.order-step img {
     margin-left: 50px;
     margin-top: 20px;
 }
-.order-step  h6{
+
+.order-step h6 {
     margin-left: 10px;
 }
-.inquiry{
+
+.inquiry {
     height: 130px;
     display: flex;
     background-color: white;
 }
-.train-inquiry{
+
+.train-inquiry {
     height: 80px;
     width: 80px;
     border: 2px solid rgb(170, 166, 166);
@@ -180,76 +213,98 @@
     margin-left: 100px;
     margin-top: 50px;
 }
-#pnr{
+
+#pnr {
     margin-left: 350px;
 }
-.train-inquiry i{
+
+.train-inquiry i {
     font-size: 30px;
     margin: 25px 25px;
     color: rgb(49, 131, 238);
 }
-#pnr i{
+
+#pnr i {
     margin-left: 20px;
     transform: rotate(130deg);
 }
-#pnr i:hover{
+
+#pnr i:hover {
     transition: .6s;
     transform: rotate(360deg);
 }
-.train-inquiry i:hover{
+
+.train-inquiry i:hover {
     transition: .6s;
     transform: rotate(360deg);
 }
-.inquiry-detail{
+
+.inquiry-detail {
     height: 50px;
     display: flex;
     background-color: white;
 }
-.inquiry-detail .box{
+
+.inquiry-detail .box {
     height: 30px;
     width: 200px;
     margin-top: 10px;
 }
-#box1{
+
+#box1 {
     margin-left: 280px;
 }
-.details{
+
+.details {
     background-color: rgb(247, 241, 241);
     margin-top: 20px;
 }
-.details h5,h3,p,ul{
+
+.details h5,
+h3,
+p,
+ul {
     margin-left: 80px;
 }
-.details h4{
+
+.details h4 {
     margin-left: 80px;
     margin-top: 30px;
 }
-.details h3{
+
+.details h3 {
     color: rgb(11, 64, 161);
     font-weight: 600;
 }
-.details li{
+
+.details li {
     margin-top: 10px;
 }
-.details a{
+
+.details a {
     text-decoration: none;
 }
-.details a:hover{
+
+.details a:hover {
     color: darkorange;
     transition: 0.5s;
 }
-.add-restro{
+
+.add-restro {
     background-color: rgb(18, 36, 68);
     margin-top: -14px;
     display: flex;
 }
-.add-restro .first{
+
+.add-restro .first {
     width: 60%;
 }
-.add-restro .second{
+
+.add-restro .second {
     width: 40%;
 }
-.add-restro .second button{
+
+.add-restro .second button {
     margin-top: 80px;
     margin-left: 150px;
     height: 50px;
@@ -260,19 +315,61 @@
     border-radius: 8px;
     border: 2px solid white;
 }
-.add-restro .second button:hover{
+
+.add-restro .second button:hover {
     background-color: aqua;
     color: white;
     transition: .6s;
-    border: none; 
+    border: none;
     transform: scale(1.1);
 }
-footer{
-    background-color: orangered;
+
+footer {
+    background-color: rgb(219, 157, 134);
     display: flex;
 }
-footer .foot-box{
+
+footer .foot-box {
     width: 25%;
     margin-left: 80px;
     margin-top: 50px;
+}
+.foot-box a{
+    color: black;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.foot-box a:hover{
+    color: white;
+    transition: .6s;
+}
+.foot-box .info-list {
+    padding: 10px 0;
+}
+
+#contact a{
+    color: black;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 25px;
+}
+ #contact a:hover{
+    font-size: 30px;
+    transition: .6s;
+    color: cadetblue;
+}
+ #contact:hover{
+    transition: .6s;
+}
+
+
+/* PNE.html */
+.status{
+    
+    background-color: rgb(255, 115, 0);
+}
+.status h2{
+    padding: 70px 0;
+    margin-left: 80px;
+    color: white;
 }
