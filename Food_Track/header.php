@@ -57,14 +57,24 @@
                 <a href="about" class="nav-item nav-link <?php active("about")?>">About</a>
                 <a href="contact" class="nav-item nav-link <?php active("contact")?>">Contact</a>
             </div>
-           <?php
-           if(isset($_SESSION['user']))
-           {
-            ?>
-            <a href="login" class="btn btn-primary py-2 px-4 ">Logout</a>
+           
+           
             <?php
-           }
-           ?>
+		  if(isset($_SESSION['user']))
+		  {
+		  ?>
+		    <a href="userlogout" class="btn btn-primary py-2 px-4 ">Logout</a>
+           
+		   
+		  <?php
+		  }
+		  else
+		  {  
+		  ?>
+			 <a href="login" class="btn btn-primary py-2 px-4 ">Login</a>
+		  <?php
+		  }
+		  ?>
         </div>
     </nav>
 
