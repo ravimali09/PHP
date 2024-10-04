@@ -53,23 +53,11 @@
                 <div class="container my-5 py-5">
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h3 style="color:white;">Welcome 
-                                <?php
-                                  if(isset($_SESSION['user']))
-                                  {
-                                  
-                                   echo $_SESSION['user'];                                 
-                                  
-                                  }
-                                ?>
-                            </h3>
-                            <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
+                           <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
                             <p class="text-white animated slideInLeft mb-4 pb-2">
                                 Online Food Delivery in 1000+ Trains
                                 Get Tasty, Fresh & Hygienic Food from Trusted Restaurants with Contactless Delivery on Your Train Seat by FSSAI Approved E-Catering by Food Track
-
                             </p>
-                            <a href="Order.php" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">order Now</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                             <img class="img-fluid" src="img/hero2.png" alt="">
@@ -116,7 +104,7 @@
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="service-item rounded pt-3">
-                            <div class="p-4">
+                            <div class="p-4"  style="height:218px">
                                 <i class="fa fa-3x fa-headset text-primary mb-4"></i>
                                 <h5>Step 4</h5>
                                 <p>Get Food Delivery at Train Seat

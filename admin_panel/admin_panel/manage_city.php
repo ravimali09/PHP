@@ -29,7 +29,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Manage Order</h1>
+                    <h1 class="page-head-line">Manage City</h1>
 
                 </div>
             </div>
@@ -40,51 +40,42 @@
                     <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Order
+                            Manage City
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>order_id</th>
-                                            <th>customer_id</th>
-                                            <th>restaurant_id</th>
-                                            <th>order_date</th>
-                                            <th>total_price</th>
-                                            <th>status</th>
-                                            <th>pnr_no</th>
-                                            <th>comments</th>
-                                            <th>cart_id</th>
+                                            <th>city_id</th>
+                                            <th>city_name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
 
-                                        foreach($order_details_arr as $data)
-                                         {
+                                        foreach ($city_arr as $data) {
 
                                         ?>
 
-                                            
-                                            
-                                            <td><?php echo $data->order_id; ?></td>
-                                            <td><?php echo $data->customer_id; ?></td>
-                                            <td><?php echo $data->restaurant_id; ?></td>
-                                            <td><?php echo $data->order_date; ?></td>
-                                            <td><?php echo $data->total_price; ?></td>
-                                            <td><?php echo $data->status; ?></td>
-                                            <td><?php echo $data->pnr_no; ?></td>
-                                            <td><?php echo $data->comments; ?></td>
-                                            <td><?php echo $data->cart_id; ?></td>
-                                          
+                                            <td><?php echo $data->city_id; ?></td>
+                                            <td><?php echo $data->city_name; ?></td>
+                                           
+
+
+
+
+
                                             <td>
                                                 <a href="#" class="btn btn-primary">Edit</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
+                                                <a href="delete?del_city=<?php echo $data->city_id; ?>" class="btn btn-danger" > Delete</a>   
+                                                
                                                 <a href="#" class="btn btn-info">Status</a>
+
+                                                                                                
                                             </td>
-                                         
+                                            </tr>
                                         <?php
                                         }
                                         ?>

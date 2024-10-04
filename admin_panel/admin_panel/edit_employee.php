@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
@@ -30,7 +30,7 @@ include_once('header.php');
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Add Employee</h1>
+                        <h1 class="page-head-line">Edit Employee</h1>
                    
 
                     </div>
@@ -40,7 +40,7 @@ include_once('header.php');
             <div class="col-md-12 col-sm-12 col-xs-12">
                <div class="panel panel-info">
                         <div class="panel-heading">
-                           Add Employee
+                        Edit Employee
                         </div>
                         <div class="panel-body">
                             <form role="form" method="post" enctype="multipart/form-data">
@@ -50,31 +50,25 @@ include_once('header.php');
                                             <p class="help-block">Enter Employee ID here.</p>
                                         </div> -->
 									<div class="form-group">
-                                            <label>name</label>
-                                            <input class="form-control" type="text" name="name">
+                                            <label>Name</label>
+                                            <input class="form-control" type="text" name="name" value="<?php echo $fetch->name;?>">
                                      <p class="help-block">Enter Employee Name here.</p>
                                         </div>
-                                        </div>
 									<div class="form-group">
-                                            <label>email</label>
-                                            <input class="form-control" type="email"  name="email">
+                                            <label>Email</label>
+                                            <input class="form-control" type="email"  name="email" value="<?php echo $fetch->email;?>">
                                      <p class="help-block">Enter Employee Email here.</p>
                                         </div>
-                                        <div class="form-group">
-                                            <label>password</label>
-                                            <input class="form-control" type="password"  name="password">
-                                     <p class="help-block">Enter Password here.</p>
-                                        </div>
 										<div class="form-group">
-                                            <label>status</label>
-                                            <input class="form-control" type="text"  name="status">
+                                            <label>Status</label>
+                                            <input class="form-control" type="text"  name="status" value="<?php echo $fetch->status;?>">
                                      <p class="help-block">Enter status here.</p>
                                         </div>
 										
 										
 										
 									
-                                        <button type="submit" name="submit"class="btn btn-info">Send Message </button>
+                                        <button type="submit" name="update"class="btn btn-info">Save Changes</button>
 
                                     </form>
                             </div>
@@ -82,16 +76,6 @@ include_once('header.php');
                             </div>
 
         </div>
-
-            </div>
-            <!-- /. PAGE INNER  -->
-        </div>
-        <!-- /. PAGE WRAPPER  -->
-    </div>             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
-        </div>
-     <!-- /. WRAPPER  -->
      <?php
   include_once('footer.php');
   ?>

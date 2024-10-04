@@ -20,7 +20,6 @@
 
 
 
-
     <?php
     include_once('header.php');
     ?>
@@ -30,7 +29,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Manage Cart</h1>
+                    <h1 class="page-head-line">Manage Order</h1>
 
                 </div>
             </div>
@@ -41,50 +40,54 @@
                     <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Cart
+                            Manage Order
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>cart_id</th>
+                                            <th>order_id</th>
                                             <th>customer_id</th>
-                                            <th>food_id</th>
-                                            <th>quantity</th>
+                                            <th>restaurant_id</th>
+                                            <th>order_date</th>
                                             <th>total_price</th>
+                                            <th>status</th>
+                                            <th>pnr_no</th>
+                                            <th>comments</th>
+                                            <th>cart_id</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
 
-                                        foreach ($cart_arr as $data) {
+                                        foreach($order_details_arr as $data)
+                                         {
 
                                         ?>
 
-                                            <td><?php echo $data->cart_id; ?></td>
+                                            
+                                            
+                                            <td><?php echo $data->order_id; ?></td>
                                             <td><?php echo $data->customer_id; ?></td>
-                                            <td><?php echo $data->food_id; ?></td>
-                                            <td><?php echo $data->quantity; ?></td>
+                                            <td><?php echo $data->restaurant_id; ?></td>
+                                            <td><?php echo $data->order_date; ?></td>
                                             <td><?php echo $data->total_price; ?></td>
-                                        
-                                           
-
-
-
+                                            <td><?php echo $data->status; ?></td>
+                                            <td><?php echo $data->pnr_no; ?></td>
+                                            <td><?php echo $data->comments; ?></td>
+                                            <td><?php echo $data->cart_id; ?></td>
+                                          
                                             <td>
                                                 <a href="#" class="btn btn-primary">Edit</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
+                                                <a href="delete?del_order=<?php echo $data->order_id; ?>" class="btn btn-danger" > Delete</a>  
                                                 <a href="#" class="btn btn-info">Status</a>
                                             </td>
-                                            </tr>
+                                         
                                         <?php
                                         }
                                         ?>
-
-
-
                                     </tbody>
                                 </table>
                             </div>

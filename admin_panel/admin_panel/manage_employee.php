@@ -27,7 +27,7 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Manage Feedback</h1>
+                        <h1 class="page-head-line">Manage Employee</h1>
 
                     </div>
                 </div>
@@ -38,44 +38,46 @@
                   <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Feedback
+                            Manage Shop
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>feedback_id</th>
-                                            <th>customer_id</th>
-                                            <th>order_id</th>
-                                            <th>rating</th>
-                                            <th>review</th>
+                                            <th>employee_id</th>
+                                            <th>name</th>
+                                            <th>email</th>
+                                            <th>password</th>
+                                            <th>Status</th>
 											<th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <?php
-                                     
-                                     foreach($feedback_arr as $data)
-                                     {
+                                    <?php 
+									foreach($employee_arr as $data)
+									{
+									?>
+                                        <tr>
+                                        <tr>
+                                            <td><?php echo $data->employee_id; ?></td>
+                                            <td><?php echo $data->name; ?></td>
+                                            <td><?php echo $data->email; ?></td>
+                                            <td><?php echo $data->password; ?></td>
+                                            <td><?php echo $data->status; ?></td>
 
-                                   
-                                     ?> 
 
-                                          <td><?php echo $data->feedback_id; ?></td>
-                                            <td><?php echo $data->customer_id; ?></td>
-                                            <td><?php echo $data->order_id; ?></td>
-                                            <td><?php echo $data->rating; ?></td>
-                                            <td><?php echo $data->review; ?></td>
-                                            <td>
-												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
+                                           
+											<td>
+												<a href="edit?edit_employee=<?php echo $data->employee_id; ?>" class="btn btn-primary">Edit</a>
+                                                <a href="delete?del_emp=<?php echo $data->employee_id; ?>" class="btn btn-danger" > Delete</a>                       
 												<a href="#" class="btn btn-info">Status</a>
 											</td>
                                         </tr>
                                         <?php
 									}
 									?>  
+                                       
                                     </tbody>
                                 </table>
                             </div>

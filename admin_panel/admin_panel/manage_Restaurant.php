@@ -29,7 +29,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Manage City</h1>
+                    <h1 class="page-head-line">Manage Shop</h1>
 
                 </div>
             </div>
@@ -40,42 +40,48 @@
                     <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage City
+                            Manage Shop
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
+                                            <th>Restaurant_id</th>
+                                            <th>Restaurant_name</th>
+                                            <th>address</th>
+                                            <th>image</th>
                                             <th>city_id</th>
-                                            <th>city_name</th>
+                                            <th>Google</th>
                                             <th>Action</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
 
-                                        foreach ($city_arr as $data) {
+                                        foreach ($restaurant_arr as $data) {
 
                                         ?>
 
+                                            <td><?php echo $data->restaurant_id; ?></td>
+                                            <td><?php echo $data->name; ?></td>
+                                            <td><?php echo $data->address; ?></td>
+                                            <td><a href="<?php echo $data->Google_Profile;?>"><img src="assets/img/restaurant/<?php echo $data->image?>" width="50px"/></a></td>
                                             <td><?php echo $data->city_id; ?></td>
-                                            <td><?php echo $data->city_name; ?></td>
-                                           
-
-
-
+                                            <td><a href="<?php echo $data->Google_Profile;?>"><?php echo $data->Google_Profile; ?></a></td>
 
 
                                             <td>
-                                                <a href="#" class="btn btn-primary">Edit</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
+                                                <a href="edit?edit_shop=<?php echo $data->restaurant_id; ?>" class="btn btn-primary">Edit</a>
+                                                <a href="delete?del_shop=<?php echo $data->restaurant_id; ?>" class="btn btn-danger" > Delete</a>         
                                                 <a href="#" class="btn btn-info">Status</a>
                                             </td>
                                             </tr>
                                         <?php
                                         }
                                         ?>
+
                                     </tbody>
                                 </table>
                             </div>

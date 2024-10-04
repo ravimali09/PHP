@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Edit User</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -44,6 +44,7 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
+    </div>
         <!-- Spinner End -->
 
 
@@ -55,92 +56,35 @@
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Login/Sign-up</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Edit User</h1>
                 </div>
             </div>
         </div>
-        <!-- Navbar & Hero End -->
+       
 
-
-  <!-- login start -->
-  <div class="form" method="post">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1  style="color: white; margin-bottom:40px;">Sign Up </h1>
+<div class="form" method="post"> 
+    <div class="tab-content"> 
+          <h1  style="color: white; margin-bottom:40px;">Edit Profile</h1>
           
-          <form action="" method="post">
+        <form action="" method="post">
           
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                 Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="on" name="name">
+            <div class="top-row">
+                <div class="field-wrap">
+                <input type="text" required autocomplete="on" class="form-control border border border-danger" name="name" value="<?php echo $fetch->name;?>">
+                </div>
+            
+                <div class="field-wrap">
+                <input type="number"required autocomplete="on" class="form-control border border-danger" name="contact_number" value="<?php echo $fetch->contact_number;?>">
+                </div>
             </div>
-        
+
             <div class="field-wrap">
-              <label>
-                Contact<span class="req">*</span>
-              </label>
-              <input type="number"required autocomplete="on" name="contact_number">
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email" required autocomplete="on" name="email">
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="on" name="password">
-          </div>
-         
-          <button type="submit" class="button button-block" name="signup">Get Started</button>
-          
-          </form>
-
-        </div>
-        
-        <div id="login">   
-          <h1 style="color: white; margin-bottom:40px;">Welcome Back!</h1>
-          
-          <form action="" method="post">
-          
-          <div class="field-wrap">
-            <input type="email"required autocomplete="on"  name="email" value="<?php if(isset($_COOKIE['user_cookie'])) { echo $_COOKIE['user_cookie']; }?>">
-            <label style="margin-left:-10px"> Email Address</label>
-          </div>
-          
-          <div class="field-wrap">
-           
-            <input type="password"required autocomplete="on" name="password" value="<?php if(isset($_COOKIE['pass_cookie'])) { echo $_COOKIE['pass_cookie']; }?>">
-            <label style="margin-left:-10px">Password</label>
-          </div>
-          <p style="display:flex; margin-left:-10px;"><input type="checkbox" name="remember" style="width:10%; margin-top:5px;">Remember Me</p>
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button type="submit" class="button button-block" name="login">Login</button>
-          
-          </form>
-
-        </div>
-        
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
-  <!-- login end -->
-
+                <input type="email" required autocomplete="on" class="form-control border border-danger" name="email" value="<?php echo $fetch->email;?>">
+            </div>       
+            <button type="submit" class="button button-block border border-danger" name="update">Update</button>
+        </form>
+    </div>
+</div>
         <!-- Footer Start -->
         <?php
         include_once('footer.php');

@@ -66,12 +66,13 @@
                                          <td><?php echo $data->name; ?></td>
                                            <td><?php echo $data->description; ?></td>
                                            <td><?php echo $data->price; ?></td>
-                                           <td><?php echo $data->image;?></td>
+                                           <td><img src="assets/img/restaurant/<?php echo $data->image?>" width="50px" height="30px"/></td>
+
 
                                            <td>
-												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-info">Status</a>
+                                            <a href="edit?edit_food=<?php echo $data->food_id; ?>" class="btn btn-primary">Edit</a>
+                                            <a href="delete?del_food=<?php echo $data->food_id; ?>" class="btn btn-danger" > Delete</a>    
+											<a href="#" class="btn btn-info">Status</a>
 											</td>
                                         </tr>
                                         <?php

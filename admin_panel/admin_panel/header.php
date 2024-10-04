@@ -1,14 +1,17 @@
 <?php
 function active($currect_page){
-    $url_array =  explode('/', $_SERVER['REQUEST_URI']);
+    $url_array =  explode('/', $_SERVER['REQUEST_URI']) ;
     $url = end($url_array);  
     if($currect_page == $url){
         echo 'active-menu'; //class name in css 
     } 
   }
-  if(isset($_SESSION['admin']))
+?>
+
+<?php
+if(isset($_SESSION['admin']))
   {
-	  
+   
   }	  
   else
   {
@@ -18,7 +21,6 @@ function active($currect_page){
 		</script>";
   }
 ?>
-
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />    
  
@@ -33,13 +35,17 @@ function active($currect_page){
                 </button>
                 <a class="navbar-brand" href=""><i class="fa fa-train" aria-hidden="true"></i>   Food-Track</a>
             </div>
-            <div style="color: black;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;"> Last access :  2 week ago &nbsp; <a href="admin_logout" class="btn btn-danger square-btn-adjust">Logout
+           
     	
        
 </a>
+            <div style="color: black;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;"><a href="admin_logout" class="btn btn-danger square-btn-adjust">Logout
+    	
+      	
+</a><a href="admin_profile" class="btn btn-warning square-btn-adjust" style="margin:0px 10px; ">profile </a>
             </div>
         </nav>
 
@@ -47,14 +53,14 @@ font-size: 16px;"> Last access :  2 week ago &nbsp; <a href="admin_logout" class
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center">
-                        <img src="assets/img/admin_img.webp" class="user-image img-responsive" />
+                        <img src="assets/img/find_user.png" class="user-image img-responsive" />
                     </li>
                     <li class="text-center" style="color:black; background-color:white; margin:10px;">
-                        <h4>
-                        <?php
-                        echo $_SESSION['admin'];
-                        ?>   
-                        </h>                      
+                        <!-- <h4>Divya Sondagar </h> -->
+                        
+                            <?php
+								echo $_SESSION['admin'];
+								?>	
                     </li>
 
                     <li>

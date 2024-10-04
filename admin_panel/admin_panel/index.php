@@ -32,7 +32,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Admin Dashboard</h2>
-                        <h5>Welcome Admin , Love to see you back. </h5>
+                        <h5>Welcome 
+                        <?php echo $_SESSION['admin'];?>    
+                        , Love to see you back. </h5>
                     </div>
                 </div>
                 <!-- /. ROW  -->
@@ -75,7 +77,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-brown set-icon">
-                    <i class="fa fa-rocket" style="margin-top:15px"></i>
+                    <i class="fa fa-rocket" style="margin-top:18px"></i>
                 </span>
                 <div class="text-box" >
                     <p class="main-text">3 Orders</p>

@@ -20,6 +20,7 @@
 
 
 
+
     <?php
     include_once('header.php');
     ?>
@@ -29,7 +30,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Manage Shop</h1>
+                    <h1 class="page-head-line">Manage Cart</h1>
 
                 </div>
             </div>
@@ -40,46 +41,49 @@
                     <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Shop
+                            Manage Cart
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Restaurant_id</th>
-                                            <th>Restaurant_name</th>
-                                            <th>address</th>
-                                            <th>image</th>
-                                            <th>city_id</th>
-                                            <th>Google</th>
-                                            
+                                            <th>cart_id</th>
+                                            <th>customer_id</th>
+                                            <th>food_id</th>
+                                            <th>quantity</th>
+                                            <th>total_price</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
 
-                                        foreach ($restaurant_arr as $data) {
+                                        foreach ($cart_arr as $data) {
 
                                         ?>
 
-                                            <td><?php echo $data->restaurant_id; ?></td>
-                                            <td><?php echo $data->name; ?></td>
-                                            <td><?php echo $data->address; ?></td>
-                                           <td><?php echo $data->image;?></td>
-                                            <td><?php echo $data->city_id; ?></td>
-                                            <td><?php echo $data->Google_Profile; ?></td>
+                                            <td><?php echo $data->cart_id; ?></td>
+                                            <td><?php echo $data->customer_id; ?></td>
+                                            <td><?php echo $data->food_id; ?></td>
+                                            <td><?php echo $data->quantity; ?></td>
+                                            <td><?php echo $data->total_price; ?></td>
+                                        
+                                           
+
 
 
                                             <td>
                                                 <a href="#" class="btn btn-primary">Edit</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
+                                                <a href="delete?del_cart=<?php echo $data->cart_id; ?>" class="btn btn-danger" > Delete</a>                                                
                                                 <a href="#" class="btn btn-info">Status</a>
                                             </td>
                                             </tr>
                                         <?php
                                         }
                                         ?>
+
+
 
                                     </tbody>
                                 </table>

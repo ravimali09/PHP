@@ -64,11 +64,15 @@ class control extends model
                             
 							if(isset($_REQUEST['remember']))
 							{
-								setcookie('user_cookie',$email,time()+50);
-								setcookie('pass_cookie',$pass,time()+50);
+								setcookie('user_cookie',$email,time()+(24 * 60 * 60));
+								setcookie('pass_cookie',$pass,time()+(24 * 60 * 60));
 							}
                             //create_session
+                            $_SESSION['user_name']=$fetch->name;
 						    $_SESSION['user']=$fetch->email;
+                            // error_log("User Name: " . $_SESSION['user_name']); // Check in logs
+
+                         
 							echo "<script>
 								alert('Login Success');
 								window.location='index';
@@ -118,6 +122,7 @@ class control extends model
             break;
             case '/userlogout':
 				unset($_SESSION['user']);
+                unset($_SESSION['user_name']);
 				echo "<script>
 				alert('Logout Succes');
 				window.location='login';
@@ -125,6 +130,47 @@ class control extends model
 			break;
             case '/station':
                 include_once('station.php');
+            break;
+
+            case '/user_profile':
+                $where=array("name"=>$_SESSION['user_name']);
+				$res=$this->select_where('customer',$where);
+				$fetch=$res->fetch_object();
+				include_once('user_profile.php');
+            break;
+
+            case '/edit':
+                if(isset($_REQUEST['edit_user']))
+				{
+					$id=$_REQUEST['edit_user'];
+					$where=array("customer_id"=>$id);
+					$res=$this->select_where('customer',$where);
+					$fetch=$res->fetch_object();
+                    include_once('edit_user.php');
+
+                    if(isset($_REQUEST['update']))
+					{
+							$name=$_REQUEST['name'];
+							$contact_number=$_REQUEST['contact_number'];
+							$email=$_REQUEST['email']; 
+							
+							
+                                $data=array("name"=>$name,"email"=>$email,"contact_number"=>$contact_number);
+                                $res=$this->update('customer',$data,$where);
+                                if($res)
+                                {					
+                                    echo "<script>
+                                    alert('Data Update Success');
+                                    window.location='user_profile';
+                                    </script>";
+                                }
+					}
+				}
+				
+                break;
+
+            case '/edit_user':
+                include_once('edit_user.php');
             break;
             case '/restaurants':
                 include_once('restaurants.php');

@@ -1,10 +1,3 @@
-
-
-
-
-
-           
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,6 +49,14 @@
                 
                 <a href="about" class="nav-item nav-link <?php active("about")?>">About</a>
                 <a href="contact" class="nav-item nav-link <?php active("contact")?>">Contact</a>
+                <?php
+                    if(isset($_SESSION['user']))
+                    {
+                    ?>
+                         <a href="user_profile" class="nav-item nav-link <?php active("user_profile")?>">Account</a>
+                    <?php
+                    }
+                    ?>
             </div>
            
            
