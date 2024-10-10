@@ -36,7 +36,7 @@
                   <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Shop
+                            Manage Food
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
