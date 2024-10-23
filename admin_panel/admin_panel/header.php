@@ -144,6 +144,9 @@ font-size: 16px;"><a href="admin_logout" class="btn btn-danger square-btn-adjust
                     <li>
                         <a href="#"><i class="fa-solid fa-city fa-3x"></i>City </a>
                         <ul class="nav nav-second-level">
+                        <li>
+                                <a href="add_city">Add City</a>
+                            </li>
                             <li>
                                 <a href="manage_city">Manage City</a>
                             </li>

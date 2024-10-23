@@ -85,6 +85,46 @@ class model
 		$run=$this->conn->query($upd);  // query run on db
 		return $run;
 	}
+	function select_join4($tbl1,$tbl2,$on1,$tbl3,$on2,$tbl4,$on3)
+	{
+		$sel="select * from $tbl1 join $tbl2 on $on1 join $tbl3 on $on2 join $tbl4 on $on3";  // 1=1 means query continue
+		$run=$this->conn->query($sel);  // run query
+		while($fetch=$run->fetch_object())  // data fetch from query
+		{
+			$arr[]=$fetch;
+		}
+		if(!empty($arr))
+		{
+			return $arr;
+		}
+	}
+	
+	function select_orderby($tbl1,$col)
+	{
+		$sel="select * from $tbl1 order by $col";  // 1=1 means query continue
+		$run=$this->conn->query($sel);  // run query
+		while($fetch=$run->fetch_object())  // data fetch from query
+		{
+			$arr[]=$fetch;
+		}
+		if(!empty($arr))
+		{
+			return $arr;
+		}
+	}
+	function selectSerach($tbl1,$tbl2,$on1,$tbl3,$on2,$tbl4,$on3,$col,$value)
+	{
+		$sel="select * from $tbl1 join $tbl2 on $on1 join $tbl3 on $on2 join $tbl4 on $on3 where $col LIKE '%$value%' ; ";  // query
+		$run=$this->conn->query($sel);  // run query
+		while($fetch=$run->fetch_object())  // data fetch from query
+		{
+			$arr[]=$fetch;
+		}
+		if(!empty($arr))
+		{
+			return $arr;
+		}
+	}
 
 	
 }

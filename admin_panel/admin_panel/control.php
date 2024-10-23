@@ -84,7 +84,23 @@ class control extends model // 2 step extend model
                 include_once('manage_cart.php');
                 break;
 
+             case '/add_city':
+                $city_arr = $this->select('city');
+                include_once('add_city.php');
+                if (isset($_REQUEST['submit'])) {
+                    $city_name = $_REQUEST['city_name'];
 
+                    $data = array("city_name" => $city_name);
+
+                    $res = $this->insert('city', $data);
+                    if ($res) {
+                        echo "<script>
+							alert('City Add Success');
+							window.location='add_city';
+						</script>";
+                    }
+                }
+                break;
 
             case '/manage_city':
                 $city_arr = $this->select('city');
@@ -220,7 +236,7 @@ class control extends model // 2 step extend model
 							if($_FILES['image']['name']>0)
 							{
 								$image=$_FILES['image']['name'];
-								$path="assets/img/restaurant/".$image;
+								$path="assets/img/food/".$image;
 								$tmp_img=$_FILES['image']['tmp_name'];
 								move_uploaded_file($tmp_img,$path);
 							
@@ -228,7 +244,7 @@ class control extends model // 2 step extend model
 								$res=$this->update('food',$data,$where);
 								if($res)
 								{					
-									unlink('assets/img/restaurant/'.$old_img);
+									unlink('assets/img/food/'.$old_img);
 									echo "<script>
 										alert('Data Update Success');
 										window.location='manage_food';
@@ -311,14 +327,14 @@ class control extends model // 2 step extend model
                     $where = array("restaurant_id" => $id);
 
                     // img delete
-                    // $res_fetch=$this->select_where('restaurant',$where);
-                    // $fetch=$res_fetch->fetch_object();
-                    // $img=$fetch->img;
+                    $res_fetch=$this->select_where('restaurant',$where);
+                    $fetch=$res_fetch->fetch_object();
+                    $img=$fetch->image;
 
 
                     $res = $this->delete_where('restaurant', $where);
                     if ($res) {
-                        // unlink('assets/img/restuarant/'.$img); // image delete from folder 
+                        unlink('assets/img/restuarant/'.$img); // image delete from folder 
                         echo "<script>
                                 alert('Restaurant Data Delete Success');
                                 window.location='manage_Restaurant';
@@ -347,14 +363,14 @@ class control extends model // 2 step extend model
                     $where = array("food_id" => $id);
 
                     // img delete
-                    // $res_fetch=$this->select_where('food',$where);
-                    // $fetch=$res_fetch->fetch_object();
-                    // $img=$fetch->img;
+                    $res_fetch=$this->select_where('food',$where);
+                    $fetch=$res_fetch->fetch_object();
+                    $img=$fetch->image;
 
 
                     $res = $this->delete_where('food', $where);
                     if ($res) {
-                        // unlink('assets/img/restuarant/'.$img); // image delete from folder 
+                        unlink('assets/img/food/'.$img); // image delete from folder 
                         echo "<script>
                                 alert('food Data Delete Success');
                                 window.location='manage_food';
@@ -483,7 +499,7 @@ class control extends model // 2 step extend model
 
                     $res = $this->insert('food', $data);
                     if ($res) {
-                        $path = "assets/img/restaurant/" . $img;
+                        $path = "assets/img/food/" . $img;
                         $tmp_image = $_FILES['image']['tmp_name'];
                         move_uploaded_file($tmp_image, $path);
 

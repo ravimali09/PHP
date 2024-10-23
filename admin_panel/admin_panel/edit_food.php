@@ -83,7 +83,7 @@ include_once('header.php');
                                             <label>image</label>
                                             <input class="form-control" type="file" name="image">
                                             <p class="help-block">Upload File here.</p>
-                                            <img src="assets/img/restaurant/<?php echo $fetch->image;?>" width="50px">
+                                            <img src="assets/img/food/<?php echo $fetch->image;?>" width="50px">
 
                                         </div>
                                       

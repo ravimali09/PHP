@@ -65,7 +65,7 @@
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Select Restaurants</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Select Restaurant</h1>
                 </div>
             </div>
         </div>
@@ -75,156 +75,48 @@
         <!--station Start -->
         <header>
             <h1>Order Food in Ahmedabad (12345) Train</h1>
-            <div class="date-join">
-
-                <p>Journey Date: 03-Aug-2024</p>
-            </div>
-
-
             <section>
+            <h4>Choose Restaurant</h4>
         </header>
 
         <div class="main-restaurant">
-            <h1>Maninagar Restaurants</h1>
+          
             <div class="container mt-5 mb-5">
                 <div class="d-flex justify-content-center row">
                     <div class="col-md-10">
+
+                            <?php
+                            foreach ($restaurant_arr as $data)
+                            {
+                            ?>
                         <div class="row p-2 bg-white border rounded">
                             <div class="col-md-3 mt-1">
-                                <img class="img-fluid img-responsive rounded product-image" src="img/resatau.jpg">
+                            <img src="../admin_panel/admin_panel/assets/img/restaurant/<?php echo $data->image?>" width="200px" height="150px" >
                             </div>
                             <div class="col-md-6 mt-1">
-                                <h5>R&R restaurant</h5>
+                                <h5><?php echo $data->name; ?></h5>
                                 <div class="d-flex flex-row">
                                     <div class="ratings mr-2"><span>Rating : </span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>station : </span><span>ahmedabad</span></div>
+                                    <div class="ratings mr-2"><span>Station : </span><span>Ahmedabad</span></div>
                                 </div>
-                                <div class="mt-1 mb-1 spec-1"><span>veg</span><span class="dot"></span><span>non-veg</span><span class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">North Indian, Chinese, South I...
-                                    Min. Order: ₹50<br><br></p>
-                                <a href="#">google profile</a>
+                                <div class="ratings mr-2"><span>Address : </span><span><?php echo $data->address; ?></span></div>
+                                 <p class="text-justify text-truncate para mb-0">Min. Order: ₹50<br></p>
+                                <a href="<?php echo $data->Google_Profile;?>">Google Profile</a>
                             </div>
                             <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                                 <button class="btn btn-outline-primary btn-sm mt-2" type="button"> <a href="foodmenu" style="color:black;">Food menu</a></button>
                             </div>
-                        </div>
-
-                        <div class="row p-2 bg-white border rounded">
-                            <div class="col-md-3 mt-1">
-                                <img class="img-fluid img-responsive rounded product-image" src="img/resatau.jpg">
-                            </div>
-                            <div class="col-md-6 mt-1">
-                                <h5>R&R restaurant</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>Rating : </span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>station : </span><span>ahmedabad</span></div>
-                                </div>
-
-                                <div class="mt-1 mb-1 spec-1"><span>veg</span><span class="dot"></span><span>non-veg</span><span class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">North Indian, Chinese, South I...
-                                    Min. Order: ₹50<br><br></p>
-                                <a href="#">google profile</a>
-                            </div>
-                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-
-                                <button class="btn btn-outline-primary btn-sm mt-2" type="button"> <a href="foodmenu" style="color:black;">Food menu</a></button>
-                            </div>
-                        </div>
-
-
-                        <div class="row p-2 bg-white border rounded">
-                            <div class="col-md-3 mt-1">
-                                <img class="img-fluid img-responsive rounded product-image" src="img/resatau.jpg">
-                            </div>
-                            <div class="col-md-6 mt-1">
-                                <h5>R&R restaurant</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>Rating : </span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>station : </span><span>ahmedabad</span></div>
-                                </div>
-
-                                <div class="mt-1 mb-1 spec-1"><span>veg</span><span class="dot"></span><span>non-veg</span><span class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">North Indian, Chinese, South I...
-                                    Min. Order: ₹50<br><br></p>
-                                <a href="#">google profile</a>
-                            </div>
-                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                                <button class="btn btn-outline-primary btn-sm mt-2" type="button"> <a href="foodmenu" style="color:black;">Food menu</a></button>
-                            </div>
-                        </div>
-                        <div class="row p-2 bg-white border rounded">
-                            <div class="col-md-3 mt-1">
-                                <img class="img-fluid img-responsive rounded product-image" src="img/resatau.jpg">
-                            </div>
-                            <div class="col-md-6 mt-1">
-                                <h5>R&R restaurant</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>Rating : </span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>station : </span><span>ahmedabad</span></div>
-                                </div>
-
-                                <div class="mt-1 mb-1 spec-1"><span>veg</span><span class="dot"></span><span>non-veg</span><span class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">North Indian, Chinese, South I...
-                                    Min. Order: ₹50<br><br></p>
-                                <a href="#">google profile</a>
-                            </div>
-                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                                <button class="btn btn-outline-primary btn-sm mt-2" type="button"> <a href="foodmenu" style="color:black;">Food menu</a></button>
-                            </div>
-                        </div>
+                           
+                        </div> <br>
+                        <?php
+                            }
+                            ?>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 2 restaurant -->
-
-
-        <div class="main-restaurant">
-            <h1> Gandhinagar Restaurants</h1>
-            <div class="container mt-5 mb-5">
-                <div class="d-flex justify-content-center
-                 row">
-                    <div class="col-md-10">
-                        <div class="row p-2 bg-white border rounded">
-                            <div class="col-md-3 mt-1">
-                                <img class="img-fluid img-responsive rounded product-image" src="img/resatau.jpg">
-                            </div>
-                            <div class="col-md-6 mt-1">
-                                <h5>R&R restaurant</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>Rating : </span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><span>station : </span><span>ahmedabad</span></div>
-                                </div>
-
-                                <div class="mt-1 mb-1 spec-1"><span>veg</span><span class="dot"></span><span>non-veg</span><span class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">North Indian, Chinese, South I...
-                                    Min. Order: ₹50<br><br></p>
-                            </div>
-                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-
-
-                                <button class="btn btn-outline-primary btn-sm mt-2" type="button"> <a href="foodmenu.php" style="color:black;">Food menu</a></button>
-                            </div>
-
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-                        </div>
-
 
 
 

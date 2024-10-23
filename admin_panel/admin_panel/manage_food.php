@@ -66,7 +66,7 @@
                                          <td><?php echo $data->name; ?></td>
                                            <td><?php echo $data->description; ?></td>
                                            <td><?php echo $data->price; ?></td>
-                                           <td><img src="assets/img/restaurant/<?php echo $data->image?>" width="50px" height="30px"/></td>
+                                           <td><img src="assets/img/food/<?php echo $data->image?>" width="50px" height="30px"/></td>
 
 
                                            <td>

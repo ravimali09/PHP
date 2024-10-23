@@ -129,6 +129,7 @@ class control extends model
 				</script>";
 			break;
             case '/station':
+                $station_arr = $this->select("city");
                 include_once('station.php');
             break;
 
@@ -173,9 +174,11 @@ class control extends model
                 include_once('edit_user.php');
             break;
             case '/restaurants':
+                $restaurant_arr = $this->select("restaurant");
                 include_once('restaurants.php');
             break;
             case '/foodmenu':
+                $food_arr = $this->select("food");
                 include_once('foodmenu.php');
             break;
             case '/cart':
