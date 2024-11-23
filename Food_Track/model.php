@@ -11,7 +11,7 @@ class model
 	public $conn="";
 	function __construct()
 	{						//hostname,username,pass,database name 
-		$this->conn=new Mysqli('localhost','root','','food_track');
+		$this->conn=new mysqli('localhost','root','','food_track');
 	}
 	
 	function select($tbl)
