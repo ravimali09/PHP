@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Table</title>
+</head>
+<body>
+    <h3 align="center">Caption- Nested Table</h3>
+    <table border="1" cellspacing="0" align="center">
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">Colspan Column</td>
+        </tr>
+        <tr>
+            <td rowspan="2" align="center">Rowspan <br>Cell</td>
+            <td align="center">Cell 2</td>
+        </tr>
+        <tr>
+            <td>
+                <table border="1" cellspacing="10" cellpadding="20" style="background-color: rgb(247, 247, 161);">
+                    <tr>
+                        <th>Inner Column <br>Heading 1</th>
+                        <th>Inner Column <br>Heading 2</th>
+                    </tr>
+                    <tr>
+                        <td align="center" style="background-color: rgb(164, 83, 211);">Inner Data Cell <br>1</td>
+                        <td style="background-color: rgb(140, 235, 140);">
+                            <table border="1" cellspacing="0" cellpadding="20" style="background-color: rgb(235, 139, 230);">
+                                <tr align="center">
+                                    <td>Inner Most <br>Column Heading <br>1</td>
+                                    <td>Inner Most <br>Column Heading <br>2</td>
+                                </tr>
+                                <tr align="center">
+                                    <td  style="background-color: rgb(177, 13, 169);">Innermost Data <br>Cell 1</td>
+                                    <td style="background-color: rgb(245, 135, 121);">Innermost Data <br>Cell 2</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
