@@ -28,6 +28,10 @@ class CustomerController extends Controller
     {
         return view('website.user_signup');
     }
+    public function adm_dashboard()
+    {
+        return view('admin.index');
+    }
     public function profile()
     {
         $id=session()->get('user_id');

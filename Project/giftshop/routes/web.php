@@ -7,6 +7,10 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+
+// use App\Http\Middleware\webbeforelogin;
+// use App\Http\Middleware\webafterlogin;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,54 +41,51 @@ Route::get('/why', function () {
     return view('website.why');
 });
 
-Route::get('/user_login',[CustomerController::class,'login']);
-Route::post('/user_auth',[CustomerController::class,'user_auth']);
-Route::get('/user_logout',[CustomerController::class,'user_logout']);
+Route::get('/user_login',[CustomerController::class,'login'])->middleware('before_web');
+Route::post('/user_auth',[CustomerController::class,'user_auth'])->middleware('before_web');
+Route::get('/user_logout',[CustomerController::class,'user_logout'])->middleware('after_web');
 
-Route::get('/profile',[CustomerController::class,'profile']);
+Route::get('/profile',[CustomerController::class,'profile'])->middleware('after_web');
 
 
-Route::get('/user_signup',[CustomerController::class,'create']);
-Route::post('/user_signup',[CustomerController::class,'store']);
-Route::get('/edituser/{id}',[CustomerController::class,'edituser']);
-Route::post('/update/{id}',[CustomerController::class,'update']);
+Route::get('/user_signup',[CustomerController::class,'create'])->middleware('before_web');
+Route::post('/user_signup',[CustomerController::class,'store'])->middleware('before_web');
+Route::get('/edituser/{id}',[CustomerController::class,'edituser'])->middleware('after_web');
+Route::post('/update/{id}',[CustomerController::class,'update'])->middleware('after_web');
 
 
   /* ------- Admin -------*/
 
 
-Route::get('/contact',[ContactController::class,'create']);
-Route::get('/manage_contact',[ContactController::class,'show']);
+Route::get('/manage_contact',[ContactController::class,'show'])->middleware('after_adm');
 Route::post('/contacts',[ContactController::class,'store']);
-Route::post('/delete_contact/{$id}',[ContactController::class,'destroy']);
+Route::post('/delete_contact/{$id}',[ContactController::class,'destroy'])->middleware('after_adm');
 
 
   
-Route::get('/dashboard', function () {
-    return view('admin.index');
-});
-Route::get('/manage_customer', function () {
-    return view('admin.manage_customer');
-});
-
-
-Route::get('/cart',[CartController::class,'show']);
-Route::get('/delete_cart/{id}',[CartController::class,'destroy']);
-
-
-Route::get('/add_product',[ProductController::class,'create']);
-Route::post('/add_product',[ProductController::class,'store']);
-Route::get('/manage_product',[ProductController::class,'show']);
-Route::get('/delete_product/{id}',[ProductController::class,'destroy']);
-
-
-Route::get('/admin_login',[AdminnController::class,'create']);
-Route::post('/admin_auth',[AdminnController::class,'login']);
-
-Route::get('/admin_logout',[AdminnController::class,'admin_logout']);
 
 
 
-Route::get('/manage_customer',[CustomerController::class,'show']);
-Route::get('/delete_customer/{id}',[CustomerController::class,'destroy']);
+Route::get('/dashboard',[CustomerController::class,'adm_dashboard'])->middleware('after_adm');
+
+
+Route::get('/cart',[CartController::class,'show'])->middleware('after_adm');
+Route::get('/delete_cart/{id}',[CartController::class,'destroy'])->middleware('after_adm');
+
+
+Route::get('/add_product',[ProductController::class,'create'])->middleware('after_adm');
+Route::post('/add_product',[ProductController::class,'store'])->middleware('after_adm');
+Route::get('/manage_product',[ProductController::class,'show'])->middleware('after_adm');
+Route::get('/delete_product/{id}',[ProductController::class,'destroy'])->middleware('after_adm');
+
+
+Route::get('/admin_login',[AdminnController::class,'create'])->middleware('before_adm');
+Route::post('/admin_auth',[AdminnController::class,'login'])->middleware('before_adm');
+
+Route::get('/admin_logout',[AdminnController::class,'admin_logout'])->middleware('after_adm');
+
+
+
+Route::get('/manage_customer',[CustomerController::class,'show'])->middleware('after_adm');
+Route::get('/delete_customer/{id}',[CustomerController::class,'destroy'])->middleware('after_adm');
 

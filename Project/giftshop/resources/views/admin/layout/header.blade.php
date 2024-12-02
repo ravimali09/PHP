@@ -1,17 +1,4 @@
-<?php
- if(session()->get('admin_id'))
- {
-    
 
- }
- else
- {
-    echo "<script> 
-    alert('Login First !');
-    window.location='/admin_login';
-    </script>";
- }
-?>
 
 
 <!DOCTYPE html>

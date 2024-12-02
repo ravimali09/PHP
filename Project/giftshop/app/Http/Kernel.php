@@ -38,6 +38,8 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        
+
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
@@ -53,6 +55,13 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
+
+        'after_web' =>\App\Http\Middleware\webafterlogin::class,
+        'before_web' =>\App\Http\Middleware\webbeforelogin::class,
+
+        'after_adm' =>\App\Http\Middleware\admafterlogin::class,
+        'before_adm' =>\App\Http\Middleware\admbeforelogin::class,
+
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
