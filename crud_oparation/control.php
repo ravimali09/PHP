@@ -66,7 +66,7 @@ class control extends model
 
                     if ($res) {
                         $path = "image/" . $image;
-                        $tmp = $_FILES['image']['tmp_name'];
+                        $tmp = $_FILES['image']['tmp'];
                         move_uploaded_file($tmp, $path);
                         echo "<script>
                             alert('Submit Suceess');
